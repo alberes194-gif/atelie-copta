@@ -770,11 +770,144 @@ h1 em, h2 em, h3 em {
   position: absolute;
   left: 3%;
   top: 0;
-  width: 430px;
+  width: 280px;
+  height: 280px;
   aspect-ratio: 1;
   border: 1px solid rgba(63, 102, 93, .28);
   border-radius: 50%;
 }
+
+/*configs dos circulos com os produtos*/
+
+
+.collection-circle{
+    position:relative;
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    overflow:hidden;
+    border:1px solid rgba(85,111,104,.25);
+    background:var(--background);
+    box-shadow:0 18px 35px rgba(0,0,0,.12);
+    transition:.35s ease;
+    z-index:5;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.collection-circle img{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    transition:
+        opacity .55s ease,
+        transform .7s ease;
+}
+
+.collection-circle:hover{
+    transform:scale(1.08);
+    z-index:20;
+    box-shadow:
+        0 0 35px rgba(255,230,170,.18),
+        0 20px 40px rgba(0,0,0,.18);
+    filter:brightness(1.08);
+}
+
+.collection-lamp-off{
+    opacity:1;
+    z-index:1;
+}
+
+.collection-lamp-on{
+    opacity:0;
+    z-index:2;
+}
+
+.collection-circle:hover .collection-lamp-off{
+    opacity:0;
+    transform:scale(1.03);
+}
+
+.collection-circle:hover .collection-lamp-on{
+    opacity:1;
+    transform:scale(1.03);
+}
+
+
+.collection-wrapper{
+    position:absolute;
+}
+
+.wrapper-1{
+    top:0;
+    left:150px;
+}
+
+.wrapper-2{
+    top:120px;
+    left:-10px;
+}
+
+.wrapper-3{
+    top:150px;
+    right:300px;
+}
+
+.wrapper-4{
+    bottom:10px;
+    left:115px;
+}
+
+.story-product-image {
+  display:none;
+}
+
+
+.collection-info{
+    position:absolute;
+    top:50%;
+    left:-220px;
+    transform:translateY(-50%) translateX(-30px);
+    width:170px;
+    opacity:0;
+    pointer-events:none;
+    transition:
+        opacity .4s ease,
+        transform .4s ease;
+    z-index:30;
+}
+
+.collection-info small{
+
+    display:block;
+    font:700 11px/1 var(--sans);
+    text-transform:uppercase;
+    letter-spacing:.18em;
+    color:var(--green-primary);
+    margin-bottom:6px;
+}
+
+.collection-info h4{
+    font:48px/.9 var(--display);
+    color:var(--green-primary);
+    margin-bottom:8px;
+}
+
+.collection-info p{
+    font:13px/1.5 var(--sans);
+    color:var(--text-light);
+}
+
+.collection-wrapper:hover .collection-info{
+    opacity:1;
+    transform:translateY(-50%) translateX(0);
+}
+
+/*circulos com os produtos*/
 
 .story-product-image {
   position: absolute;
